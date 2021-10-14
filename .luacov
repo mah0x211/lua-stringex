@@ -1,0 +1,9 @@
+codefromstrings = false
+runreport = true
+deletestats = false
+modules = {
+    stringex = 'stringex.lua',
+    ['stringex.has'] = 'lib/has.lua',
+    ['stringex.split'] = 'lib/split.lua',
+    ['stringex.trim'] = 'lib/trim.lua',
+}
