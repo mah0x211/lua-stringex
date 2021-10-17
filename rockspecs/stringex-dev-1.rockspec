@@ -2,12 +2,16 @@ rockspec_format = "3.0"
 package = "stringex"
 version = "dev-1"
 source = {
-   url = "git+ssh://git@github.com/mah0x211/lua-stringex.git"
+   url = "git+https://github.com/mah0x211/lua-stringex.git"
 }
 description = {
    summary = "additional features to the string module.",
    homepage = "https://github.com/mah0x211/lua-stringex",
    license = "MIT"
+}
+dependencies = {
+    "lua >= 5.1",
+    "isa >= 0.1.0",
 }
 build = {
    type = "builtin",
