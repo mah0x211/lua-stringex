@@ -17,6 +17,9 @@ build = {
    type = "builtin",
    modules = {
        stringex = 'stringex.lua',
+       ['stringex.capitalize'] = {
+           sources = { 'src/capitalize.c' },
+       },
        ['stringex.has'] = 'lib/has.lua',
        ['stringex.split'] = 'lib/split.lua',
        ['stringex.trim'] = 'lib/trim.lua',
