@@ -25,7 +25,14 @@ local error = error
 local sub = string.sub
 local find = string.find
 local format = string.format
-local isa = require('isa')
+--- constants
+local INF_POS = math.huge
+local INF_NEG = -INF_POS
+
+-- integer
+local function is_finite(arg)
+    return type(arg) == 'number' and (arg < INF_POS and arg > INF_NEG)
+end
 
 --- split_ex splits s by pattern and returns the substring as an array
 --- @param s string
@@ -45,7 +52,7 @@ local function split_ex(s, sep, plain, limit, after)
     elseif plain ~= nil and type(plain) ~= 'boolean' then
         error(format('invalid argument #3 (nil or boolean expected, got %s)',
                      type(plain)), 3)
-    elseif limit ~= nil and not isa.Finite(limit) then
+    elseif limit ~= nil and not is_finite(limit) then
         error(format(
                   'invalid argument #4 (nil or finite-number expected, got %s)',
                   type(limit)), 3)
