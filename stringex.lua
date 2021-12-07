@@ -38,5 +38,6 @@ for _, mname in ipairs({'has', 'split', 'trim'}) do
         end
     end
 end
+_M.capitalize = require('stringex.capitalize')
 
 return _M

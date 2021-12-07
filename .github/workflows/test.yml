@@ -67,4 +67,4 @@ jobs:
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        luacov-coveralls -v
+        luacov-coveralls
