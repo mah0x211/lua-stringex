@@ -121,9 +121,12 @@ local function split_ex(s, sep, plain, limit, after)
         end
     end
 
-    -- push remaining string
     if pos <= #s then
+        -- push remaining string
         arr[idx] = sub(s, pos)
+    elseif pos - 1 == #s then
+        -- push empty-string if last-match is at the end of string.
+        arr[idx] = ''
     end
 
     return arr

@@ -11,8 +11,8 @@ local function test_split()
     assert.equal(split.split('foo', ''), {'f', 'o', 'o'})
 
     -- test that split a string with pattern '/'
-    assert.equal(split.split('foo/bar//baz/qux', '/'),
-                 {'foo', 'bar', '', 'baz', 'qux'})
+    assert.equal(split.split('foo/bar//baz/qux/', '/'),
+                 {'foo', 'bar', '', 'baz', 'qux', ''})
 
     -- test that split a string with pattern '/+'
     assert.equal(split.split('foo/bar//baz/qux', '/+'),
