@@ -1,5 +1,5 @@
 require('luacov')
-local assert = require('assertex')
+local assert = require('assert')
 local stringex = require('stringex')
 local has = require('stringex.has')
 local split = require('stringex.split')

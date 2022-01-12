@@ -1,7 +1,7 @@
 require('luacov')
 local find = string.find
 local format = string.format
-local assert = require('assertex')
+local assert = require('assert')
 local has = require('stringex.has')
 
 local function test_has()

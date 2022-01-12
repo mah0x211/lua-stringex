@@ -1,6 +1,6 @@
 require('luacov')
 local find = string.find
-local assert = require('assertex')
+local assert = require('assert')
 local trim = require('stringex.trim')
 
 local function test_trim_space()

@@ -1,5 +1,5 @@
 require('luacov')
-local assert = require('assertex')
+local assert = require('assert')
 local capitalize = require('stringex.capitalize')
 
 local function test_capitalize()

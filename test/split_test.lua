@@ -1,6 +1,6 @@
 require('luacov')
 local find = string.find
-local assert = require('assertex')
+local assert = require('assert')
 local split = require('stringex.split')
 
 local function test_split()

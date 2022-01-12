@@ -50,7 +50,7 @@ jobs:
       run: |
         luarocks install luacov
         luarocks install luacov-coveralls
-        luarocks install assertex
+        luarocks install assert
     -
       name: Install
       run: |
