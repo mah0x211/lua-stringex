@@ -1,7 +1,7 @@
 # lua-stringex
 
 [![test](https://github.com/mah0x211/lua-stringex/actions/workflows/test.yml/badge.svg)](https://github.com/mah0x211/lua-stringex/actions/workflows/test.yml)
-[![Coverage Status](https://coveralls.io/repos/github/mah0x211/lua-stringex/badge.svg?branch=master)](https://coveralls.io/github/mah0x211/lua-stringex?branch=master)
+[![codecov](https://codecov.io/gh/mah0x211/lua-stringex/branch/master/graph/badge.svg)](https://codecov.io/gh/mah0x211/lua-stringex)
 
 additional features to the string module.
 
@@ -17,6 +17,7 @@ luarocks install stringex
 `stringex` module contains the following functions;
 
 - functions of Lua's built-in `string` module
+- functions of `stringex.capitalize` module
 - functions of `stringex.has` module
 - functions of `stringex.split` module
 - functions of `stringex.trim` module
@@ -29,6 +30,20 @@ however, if the function has the same name as the module name, it will not be pr
 local stringex = require('stringex')
 print(stringex.has('foo/bar/baz', 'bar')) -- true
 ```
+
+## `stringex.capitalize` module
+
+### s = capitalize(s)
+
+Converts the first letter `a-z` of each word to uppercase.
+
+**Params**
+
+- `s:string`: string
+
+**Returns**
+
+- `s:string`: capitalized string.
 
 
 ## `stringex.has` module

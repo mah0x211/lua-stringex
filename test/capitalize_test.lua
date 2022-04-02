@@ -5,12 +5,13 @@ local capitalize = require('stringex.capitalize')
 local function test_capitalize()
     -- test that that converts the first letter of each word to uppercase
     for _, v in ipairs({
-        {arg = 'foo-bar-baz', eq = 'Foo-Bar-Baz'},
-        {arg = 'hello_world', eq = 'Hello_world'},
-        {arg = ' () _ hello | world  _foo', eq = ' () _ Hello | World  _foo'},
+        {arg = 'foo-bar-baz', exp = 'Foo-Bar-Baz'},
+        {arg = 'hello_world', exp = 'Hello_world'},
+        {arg = ' () _ hello | world  _foo', exp = ' () _ Hello | World  _foo'},
     }) do
         local s = capitalize(v.arg)
-        assert.equal(s, v.eq)
+        assert.equal(s, v.exp)
+        assert.not_equal(s, v.arg)
     end
 
     -- test that throws an erorr with invalid argument

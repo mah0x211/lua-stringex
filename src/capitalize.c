@@ -30,34 +30,45 @@
 
 static int capitalize_lua(lua_State *L)
 {
-    size_t len = 0;
-    char *s    = NULL;
-    size_t i   = 0;
+    size_t len    = 0;
+    char *s       = NULL;
+    size_t i      = 0;
+    luaL_Buffer b = {0};
 
     luaL_checktype(L, 1, LUA_TSTRING);
     s = (char *)lua_tolstring(L, 1, &len);
     lua_settop(L, 1);
+    // create copy
+    luaL_buffinit(L, &b);
 
     if (isalnum(s[i])) {
 CHECK_LOWER:
         if (islower(s[i])) {
             // convert to uppercase
-            s[i] -= 0x20;
+            luaL_addchar(&b, s[i] - 0x20);
+        } else {
+            luaL_addchar(&b, s[i]);
         }
 
 SKIP_LETTER:
         // skip letter and '_'
-        while (++i < len && (s[i] == '_' || isalnum(s[i]))) {}
+        while (++i < len && (s[i] == '_' || isalnum(s[i]))) {
+            luaL_addchar(&b, s[i]);
+        }
     }
 
     // skip non-letter
     for (; i < len; i++) {
         if (s[i] == '_') {
+            luaL_addchar(&b, s[i]);
             goto SKIP_LETTER;
         } else if (isalnum(s[i])) {
             goto CHECK_LOWER;
         }
+        luaL_addchar(&b, s[i]);
     }
+
+    luaL_pushresult(&b);
 
     return 1;
 }
